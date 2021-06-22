@@ -8,5 +8,5 @@
 - selector    --> buildROGD:    **buildROGD**
 - buildEntity --> createRGBE:   **BUILDED_ENTITY**
 - buildROGD   --> createRGBE:   **createRGBE**
--    \*       --> logger:       **logger**
+-    \*\      --> logger:       **logger**
 - createRGBE  --> createRGBE:   **CONNECT_D_E**
