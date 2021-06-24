@@ -10,3 +10,5 @@
 - buildROGD   --> createRGBE:   **CREATE_RGBE_ROGD_QUEUE**
 - All         --> logger:       **LOG_QUEUE**
 - createRGBE  --> createRGBE:   **CREATE_RGBE_CONNECT_DI_ENTITY_QUEUE**
+
+### API's
