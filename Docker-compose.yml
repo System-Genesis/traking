@@ -67,6 +67,13 @@ services:
     env_file: creatergbe.env
     depends_on:
       - rabbit
+      
+  selector:
+    image: tommyafek/selector
+    restart: unless-stopped
+    env_file: selector.env
+    depends_on:
+      - rabbit
 
 volumes:
   redis_data:
