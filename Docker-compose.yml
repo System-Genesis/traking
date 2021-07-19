@@ -68,6 +68,23 @@ services:
     depends_on:
       - rabbit
 
+  mergesapi:
+    image: tommyafek/merges_api
+    restart: unless-stopped
+    env_file: mergesAPI.env
+    ports:
+      - 6060:6060
+    depends_on:
+      - rabbit
+      - mongo
+
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - './data/db:/data/db'
+
 volumes:
   redis_data:
     driver: local
