@@ -74,6 +74,16 @@ services:
     env_file: selector.env
     depends_on:
       - rabbit
+      
+  taskmanager:
+    image: tommyafek/taskmanager:latest
+    restart: unless-stopped
+    env_file: taskmanager.env
+    ports:
+      - 7705:7705
+    depends_on:
+      - redis
+      - rabbit
 
 volumes:
   redis_data:
