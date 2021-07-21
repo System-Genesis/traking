@@ -67,14 +67,14 @@ services:
     env_file: creatergbe.env
     depends_on:
       - rabbit
-      
+
   selector:
     image: tommyafek/selector
     restart: unless-stopped
     env_file: selector.env
     depends_on:
       - rabbit
-      
+
   taskmanager:
     image: tommyafek/taskmanager:latest
     restart: unless-stopped
