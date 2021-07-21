@@ -41,8 +41,6 @@ services:
   basicmatch:
     image: tommyafek/basic_match:latest
     env_file: basic_match.env
-    volumes:
-      - ./src/config/fieldNames.ts:/usr/src/app/app/config/fieldNames.ts
     depends_on:
       - splitter
       - rabbit
