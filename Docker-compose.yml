@@ -8,7 +8,8 @@ services:
       - 9001:9001
     env_file: variables.env
     volumes:
-      - ./dataSources.ts:/usr/src/app/app/config/dataSources.ts
+      - ./dataSources.js:/usr/src/app/dist/config/dataSources.js
+      - ./key.pem:/usr/src/app/dist/config/key.pem
     depends_on:
       - redis
       - rabbit
@@ -84,7 +85,7 @@ services:
     restart: unless-stopped
     env_file: taskmanager.env
     ports:
-      - 7705:7705
+      - 7706:7706
     depends_on:
       - redis
       - rabbit
@@ -102,7 +103,7 @@ services:
       - mongo
 
   mongo:
-    image: mongo
+    image: bitnami/mongodb:latest
     ports:
       - 27017:27017
     volumes:
