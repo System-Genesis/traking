@@ -1,7 +1,10 @@
-import fieldNames from './fieldNames';
-export const RANKS = ['unknown', 'rookie', 'champion', 'ultimate'];
-export const SERVICE_TYPES = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
-export const AKA_UNITS = [
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DOMAIN_SUFFIXES = exports.AKA_UNITS = exports.SERVICE_TYPES = exports.RANKS = void 0;
+const fieldNames_1 = require("./fieldNames");
+exports.RANKS = ['unknown', 'rookie', 'champion', 'ultimate'];
+exports.SERVICE_TYPES = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+exports.AKA_UNITS = [
     'gondor',
     'mordor',
     'wallmart',
@@ -26,11 +29,12 @@ export const AKA_UNITS = [
     'mm4',
     'mm5',
 ];
-export const DOMAIN_SUFFIXES = [
-    [fieldNames.sources.ads, '@rabiran.com'],
-    [fieldNames.sources.es, '@jello.com'],
-    [fieldNames.sources.adNN, '@adnn.com'],
-    [fieldNames.sources.sf, '@leonardo.com'],
-    [fieldNames.sources.city, '@city.com'],
-    [fieldNames.sources.mir, '@city.com'],
+exports.DOMAIN_SUFFIXES = [
+    [fieldNames_1.default.sources.ads, '@rabiran.com'],
+    [fieldNames_1.default.sources.es, '@jello.com'],
+    [fieldNames_1.default.sources.adNN, '@adnn.com'],
+    [fieldNames_1.default.sources.sf, '@leonardo.com'],
+    [fieldNames_1.default.sources.city, '@city.com'],
+    [fieldNames_1.default.sources.mir, '@city.com'],
 ];
+//# sourceMappingURL=enums.js.map

@@ -1,6 +1,7 @@
-export default {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = {
     sources: {
-        // aka: "aka_name",
         aka: 'aka',
         es: 'es_name',
         ads: 'ads_name',
@@ -14,7 +15,6 @@ export default {
         city: 'city_name',
         mir: 'mir_name',
     },
-    // aka_name: {
     aka: {
         serviceType: 'nstype',
         firstName: 'firstName',
@@ -215,3 +215,4 @@ export default {
     unknown: 'unknown',
     invalidRankForPN: 'az',
 };
+//# sourceMappingURL=fieldNames.js.map
