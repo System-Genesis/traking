@@ -42,7 +42,8 @@ services:
     image: tommyafek/basic_match:latest
     env_file: basic_match.env
     volumes:
-      - ./src/config/fieldNames.ts:/usr/src/app/app/config/fieldNames.ts
+      - ./volumes/fieldNames.js:/dist/config/fieldNames.js
+      - ./volumes/basicMatch.enums.js:/dist/config/enums.js
     depends_on:
       - splitter
       - rabbit
@@ -58,6 +59,9 @@ services:
     image: tommyafek/build_rogd
     restart: unless-stopped
     env_file: build_rogd.env
+    volumes:
+      - ./volumes/fieldNames.js:/dist/config/fieldNames.js
+      - ./volumes/buildROGD.db_enums.js:/dist/config/db_enums.js
     depends_on:
       - rabbit
 
@@ -67,14 +71,14 @@ services:
     env_file: creatergbe.env
     depends_on:
       - rabbit
-      
+
   selector:
     image: tommyafek/selector
     restart: unless-stopped
     env_file: selector.env
     depends_on:
       - rabbit
-      
+
   taskmanager:
     image: tommyafek/taskmanager:latest
     restart: unless-stopped
@@ -89,6 +93,8 @@ services:
     image: tommyafek/merges_api
     restart: unless-stopped
     env_file: mergesAPI.env
+    volumes:
+      - ./volumes/mergesAPI.sources.js:/dist/config/sources.js
     ports:
       - 6060:6060
     depends_on:
