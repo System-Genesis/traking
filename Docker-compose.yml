@@ -8,7 +8,8 @@ services:
       - 9001:9001
     env_file: variables.env
     volumes:
-      - ./dataSources.ts:/usr/src/app/app/config/dataSources.ts
+      - ./dataSources.js:/usr/src/app/dist/config/dataSources.js
+      - ./key.pem:/usr/src/app/dist/config/key.pem
     depends_on:
       - redis
       - rabbit
