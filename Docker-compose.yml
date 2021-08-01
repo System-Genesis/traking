@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   splitter:
-    image: tommyafek/splitter
+    image: systemgenesis0/splitter
     restart: unless-stopped
     ports:
       - 9001:9001
@@ -22,7 +22,7 @@ services:
       - 15672:15672
 
   mocksKart:
-    image: tommyafek/mock
+    image: systemgenesis0/mock
     restart: unless-stopped
     env_file: mock.env
     ports:
@@ -40,7 +40,7 @@ services:
       - redis_data:/bitnami/redis/data
 
   basicmatch:
-    image: tommyafek/basic_match:latest
+    image: systemgenesis0/basic_match:latest
     env_file: basic_match.env
     volumes:
       - ./volumes/fieldNames.js:/usr/src/app/dist/config/fieldNames.js
@@ -50,14 +50,14 @@ services:
       - rabbit
 
   buildentity:
-    image: tommyafek/build_entity
+    image: systemgenesis0/build_entity
     restart: unless-stopped
     env_file: buildEntities.env
     depends_on:
       - rabbit
 
   buildrogd:
-    image: tommyafek/build_rogd
+    image: systemgenesis0/build_rogd
     restart: unless-stopped
     env_file: build_rogd.env
     volumes:
@@ -67,21 +67,21 @@ services:
       - rabbit
 
   creatergbe:
-    image: tommyafek/create_rgbe
+    image: systemgenesis0/create_rgbe
     restart: unless-stopped
     env_file: creatergbe.env
     depends_on:
       - rabbit
 
   selector:
-    image: tommyafek/selector
+    image: systemgenesis0/selector
     restart: unless-stopped
     env_file: selector.env
     depends_on:
       - rabbit
 
   taskmanager:
-    image: tommyafek/taskmanager:latest
+    image: systemgenesis0/taskmanager:latest
     restart: unless-stopped
     env_file: taskmanager.env
     ports:
@@ -91,7 +91,7 @@ services:
       - rabbit
 
   mergesapi:
-    image: tommyafek/merges_api
+    image: systemgenesis0/merges_api
     restart: unless-stopped
     env_file: mergesAPI.env
     volumes:
