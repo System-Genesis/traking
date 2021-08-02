@@ -40,7 +40,7 @@ services:
       - redis_data:/bitnami/redis/data
 
   basicmatch:
-    image: systemgenesis0/basic_match:latest
+    image: systemgenesis0/basic_match
     env_file: basic_match.env
     volumes:
       - ./volumes/fieldNames.js:/usr/src/app/dist/config/fieldNames.js
