@@ -81,7 +81,7 @@ services:
       - rabbit
 
   taskmanager:
-    image: systemgenesis0/taskmanager:latest
+    image: systemgenesis0/taskmanager
     restart: unless-stopped
     env_file: taskmanager.env
     ports:
