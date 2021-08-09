@@ -16,24 +16,24 @@
 
   ### TASK MANAGER
   
-  api/
-    splitter/
-        post('/all'
-        post('/source/:source'
-        post('/identifier/:id/source/:source'
-        post('/identifier/:identifier'
+    api/
+      splitter/
+          post('/all'
+          post('/source/:source'
+          post('/identifier/:id/source/:source'
+          post('/identifier/:identifier'
 
-    recovery/
+      recovery/
         post('/all'
         post('/source/:source'
         post('/identifier/:identifier'
         post('/byDate/:dateMs'
     
-    get/
+      get/
         get('/all'
         get('/source/:source'
         get('/identifier/:identifier'
         get('/byDate/:dateMs'
     
-    daily/
+      daily/
         post('/hour/:hour/minute/:minute'
