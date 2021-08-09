@@ -37,3 +37,41 @@
     
       daily/
         post('/hour/:hour/minute/:minute'
+
+  ### MOCK KART
+    
+    api/
+      post('/generate'
+      /eightSocks
+        get('/'
+        get('/personalNumber/:personalNumber'
+        get('/identityCard/:identityCard'
+        get('/domainUser/:domainUser'
+    
+      /aka
+        get('/'
+        get('/personalNumber/:personalNumber'
+        get('/identityCard/:identityCard'
+    
+      /aD/S
+        get('/'
+        get('/personalNumber/:personalNumber'
+        get('/identityCard/:identityCard'
+        get('/domainUser/:domainUser'
+    
+      /aD/NN
+        get('/'
+        get('/personalNumber/:personalNumber'
+        get('/identityCard/:identityCard'
+        get('/domainUser/:domainUser'
+
+      /city
+        get('/'
+        get('/personalNumber/:personalNumber'
+        get('/identityCard/:identityCard'
+        get('/domainUser/:domainUser'
+    
+      /sf
+       get('/'
+       get('/personalNumber/:personalNumber'
+       get('/identityCard/:identityCard' 
