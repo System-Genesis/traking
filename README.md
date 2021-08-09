@@ -13,3 +13,26 @@
 - createRGBE  --> createRGBE:   **CREATE_RGBE_CONNECT_DI_ENTITY_QUEUE**
 
 ### API's
+
+  ### TASK MANAGER
+  api/
+    splitter/
+        post('/all'
+        post('/source/:source'
+        post('/identifier/:id/source/:source'
+        post('/identifier/:identifier'
+
+    recovery/
+        post('/all'
+        post('/source/:source'
+        post('/identifier/:identifier'
+        post('/byDate/:dateMs'
+    
+    get/
+        get('/all'
+        get('/source/:source'
+        get('/identifier/:identifier'
+        get('/byDate/:dateMs'
+    
+    daily/
+        post('/hour/:hour/minute/:minute'
