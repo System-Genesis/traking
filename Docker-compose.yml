@@ -109,6 +109,14 @@ services:
     volumes:
       - './data/db:/data/db'
 
+  # merger:
+  #   image: systemgenesis0/merger
+  #   restart: unless-stopped
+  #   env_file: merger.env
+  #   depends_on:
+  #     - rabbit
+  #     - mongo
+
 volumes:
   redis_data:
     driver: local
