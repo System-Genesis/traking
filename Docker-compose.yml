@@ -84,7 +84,7 @@ services:
     image: systemgenesis0/taskmanager
     restart: unless-stopped
     env_file: taskmanager.env
-     volumes:
+    volumes:
       - ./key.pem:/dist/key.pem
     ports:
       - 7706:7706
