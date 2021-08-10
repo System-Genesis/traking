@@ -75,3 +75,16 @@
        get('/'
        get('/personalNumber/:personalNumber'
        get('/identityCard/:identityCard' 
+       
+  ### SPLITTER
+      /api
+        post('/information'
+          body: {
+                 "dataSource": "aka",
+                  "runUID": "123",
+                  "personalNumber": "5465468", - optional
+                  "identityCard": "5465468",   - optional
+                  "domainUser": "domainUser",  - optional
+                }
+        
+    
