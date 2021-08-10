@@ -80,7 +80,7 @@
       /api
         post('/information'
           body: {
-                 "dataSource": "aka",
+                 "dataSource": "aka" or "alias",
                   "runUID": "123",
                   "personalNumber": "5465468", - optional
                   "identityCard": "5465468",   - optional
