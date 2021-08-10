@@ -77,6 +77,7 @@
        get('/identityCard/:identityCard' 
        
   ### SPLITTER
+  
       /api
         post('/information'
           body: {
@@ -87,4 +88,16 @@
                   "domainUser": "domainUser",  - optional
                 }
         
-    
+  ### MERGES API
+  
+      /recovery
+        post(''
+        post('/entity/:identifier'
+        post('/source/:source'
+        post('/date/:dateMS'
+
+      /get
+        get(''
+        get('/entity/:identifier'
+        get('/source/:source'
+        get('/date/:dateMS'
