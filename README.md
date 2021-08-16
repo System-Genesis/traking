@@ -15,7 +15,9 @@
 ### API's
 
   ### TASK MANAGER
-  
+    
+    port: 7706
+    
     api/
       splitter/
           post('/all'
@@ -39,6 +41,8 @@
         post('/hour/:hour/minute/:minute'
 
   ### MOCK KART
+    
+    port: 7700
     
     api/
       post('/generate'
@@ -78,6 +82,8 @@
        
   ### SPLITTER
   
+      port: 9001
+
       /api
         post('/information'
           body: {
@@ -90,6 +96,8 @@
         
   ### MERGES API
   
+      port: 6060
+
       /recovery
         post(''
         post('/entity/:identifier'
