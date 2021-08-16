@@ -70,6 +70,8 @@ services:
     image: systemgenesis0/create_rgbe
     restart: unless-stopped
     env_file: creatergbe.env
+    volumes:
+      - ./key.pem:/dist/key.pem
     depends_on:
       - rabbit
 
@@ -111,13 +113,13 @@ services:
     volumes:
       - './data/db:/data/db'
 
-  # merger:
-  #   image: systemgenesis0/merger
-  #   restart: unless-stopped
-  #   env_file: merger.env
-  #   depends_on:
-  #     - rabbit
-  #     - mongo
+  merger:
+    image: systemgenesis0/merger
+    restart: unless-stopped
+    env_file: merger.env
+    depends_on:
+      - rabbit
+      - mongo
 
 volumes:
   redis_data:
