@@ -9,7 +9,7 @@ services:
     env_file: variables.env
     volumes:
       - ./dataSources.js:/usr/src/app/dist/config/dataSources.js
-      - ./key.pem:/usr/src/app/dist/config/key.pem
+      - ./key.pem:/usr/src/app/dist/key/key.pem
     depends_on:
       - redis
       - rabbit
@@ -25,6 +25,8 @@ services:
     image: systemgenesis0/mock
     restart: unless-stopped
     env_file: mock.env
+    volumes:
+      - ./key.pem:/dist/key/key.pem
     ports:
       - 7700:7700
 
@@ -71,7 +73,7 @@ services:
     restart: unless-stopped
     env_file: creatergbe.env
     volumes:
-      - ./key.pem:/dist/key.pem
+      - ./key.pem:/dist/key/key.pem
     depends_on:
       - rabbit
 
@@ -87,7 +89,7 @@ services:
     restart: unless-stopped
     env_file: taskmanager.env
     volumes:
-      - ./key.pem:/dist/key.pem
+      - ./key.pem:/dist/key/key.pem
     ports:
       - 7706:7706
     depends_on:
