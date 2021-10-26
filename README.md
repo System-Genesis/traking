@@ -31,7 +31,7 @@
         post('/identifier/:identifier'
         post('/byDate/:dateMs'
     
-      get/
+      mergedUsers/
         get('/all'
         get('/source/:source'
         get('/identifier/:identifier'
@@ -86,6 +86,14 @@
 
       /api
         post('/information'
+          body: {
+                 "dataSource": "aka" or "alias",
+                  "runUID": "123",
+                  "personalNumber": "5465468", - optional
+                  "identityCard": "5465468",   - optional
+                  "domainUser": "domainUser",  - optional
+                }
+        get('/information'
           body: {
                  "dataSource": "aka" or "alias",
                   "runUID": "123",
