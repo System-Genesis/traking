@@ -18,6 +18,7 @@
     
     port: 7706
     
+    post('/newFile' { str: { str: fn } }
     api/
       splitter/
           post('/all'
