@@ -24,6 +24,10 @@
           post('/source/:source'
           post('/identifier/:id/source/:source'
           post('/identifier/:identifier'
+          get('/all'
+          get('/source/:source'
+          get('/identifier/:id/source/:source'
+          get('/identifier/:identifier'
 
       recovery/
         post('/all'
