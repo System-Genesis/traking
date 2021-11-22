@@ -18,12 +18,17 @@
     
     port: 7706
     
+    post('/newFile' { str: { str: fn } }
     api/
       splitter/
           post('/all'
           post('/source/:source'
           post('/identifier/:id/source/:source'
           post('/identifier/:identifier'
+          get('/all'
+          get('/source/:source'
+          get('/identifier/:id/source/:source'
+          get('/identifier/:identifier'
 
       recovery/
         post('/all'
