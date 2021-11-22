@@ -42,15 +42,15 @@ services:
     volumes:
       - redis_data:/bitnami/redis/data
 
-  basicmatch:
-    image: systemgenesis0/basic_match
-    env_file: basic_match.env
-    volumes:
-      - ./volumes/fieldNames.js:/usr/src/app/dist/config/fieldNames.js
-      - ./volumes/basicMatch.enums.js:/usr/src/app/dist/config/enums.js
-    depends_on:
-      - splitter
-      - rabbit
+  # basicmatch:
+  #   image: systemgenesis0/basic_match
+  #   env_file: basic_match.env
+  #   volumes:
+  #     - ./volumes/fieldNames.js:/usr/src/app/dist/config/fieldNames.js
+  #     - ./volumes/basicMatch.enums.js:/usr/src/app/dist/config/enums.js
+  #   depends_on:
+  #     - splitter
+  #     - rabbit
 
   buildentity:
     image: systemgenesis0/build_entity
