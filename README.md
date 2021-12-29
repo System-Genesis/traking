@@ -8,7 +8,7 @@
 - recovery --> selector: **RECOVERY_QUEUE**
 - selector --> buildEntity: **BUILD_ENTITY_QUEUE**
 - selector --> buildROGD(normal flow): **BUILD_ROGD_QUEUE**
-- selector --> buildROGD(Mir flow)
+- selector --> buildROGD(Mir flow): **BUILD_ROGD_MIR_QUEUE**
 - buildEntity --> createRGBE: **CREATE_RGBE_ENTITY_QUEUE**
 - buildROGD --> createRGBE(normal flow): **CREATE_RGBE_ROGD_QUEUE**
 - buildROGD --> createRGBE(Mir flow): **CREATE_RGBE_ROGD_MIR_QUEUE**
