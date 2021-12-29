@@ -1,23 +1,25 @@
 # traking
 
 ### Queues Names
-- splitter    --> basic_match:  **BASIC_MATCH_QUEUE**
-- basic_match --> merger:       **MERGER_QUEUE**
-- merger      --> selector:     **SELECTOR_QUEUE**
-- recovery    --> selector:     **RECOVERY_QUEUE**
-- selector    --> buildEntity:  **BUILD_ENTITY_QUEUE**
-- selector    --> buildROGD:    **BUILD_ROGD_QUEUE**
-- buildEntity --> createRGBE:   **CREATE_RGBE_ENTITY_QUEUE**
-- buildROGD   --> createRGBE:   **CREATE_RGBE_ROGD_QUEUE**
-- All         --> logger:       **LOG_QUEUE**
-- createRGBE  --> createRGBE:   **CREATE_RGBE_CONNECT_DI_ENTITY_QUEUE**
+
+- splitter --> basic_match: **BASIC_MATCH_QUEUE**
+- basic_match --> merger: **MERGER_QUEUE**
+- merger --> selector: **SELECTOR_QUEUE**
+- recovery --> selector: **RECOVERY_QUEUE**
+- selector --> buildEntity: **BUILD_ENTITY_QUEUE**
+- selector --> buildROGD(normal flow): **BUILD_ROGD_QUEUE**
+- selector --> buildROGD(Mir flow)
+- buildEntity --> createRGBE: **CREATE_RGBE_ENTITY_QUEUE**
+- buildROGD --> createRGBE(normal flow): **CREATE_RGBE_ROGD_QUEUE**
+- buildROGD --> createRGBE(Mir flow): **CREATE_RGBE_ROGD_MIR_QUEUE**
+- All --> logger: **LOG_QUEUE**
 
 ### API's
 
-  ### TASK MANAGER
-    
+### TASK MANAGER
+
     port: 7706
-    
+
     post('/newFile' { str: { str: fn } }
     api/
       splitter/
@@ -35,20 +37,20 @@
         post('/source/:source'
         post('/identifier/:identifier'
         post('/byDate/:dateMs'
-    
+
       mergedUsers/
         get('/all'
         get('/source/:source'
         get('/identifier/:identifier'
         get('/byDate/:dateMs'
-    
+
       daily/
         post('/hour/:hour/minute/:minute'
 
-  ### MOCK KART
-    
+### MOCK KART
+
     port: 7700
-    
+
     api/
       post('/generate'
       /eightSocks
@@ -56,18 +58,18 @@
         get('/personalNumber/:personalNumber'
         get('/identityCard/:identityCard'
         get('/domainUser/:domainUser'
-    
+
       /aka
         get('/'
         get('/personalNumber/:personalNumber'
         get('/identityCard/:identityCard'
-    
+
       /aD/S
         get('/'
         get('/personalNumber/:personalNumber'
         get('/identityCard/:identityCard'
         get('/domainUser/:domainUser'
-    
+
       /aD/NN
         get('/'
         get('/personalNumber/:personalNumber'
@@ -79,14 +81,14 @@
         get('/personalNumber/:personalNumber'
         get('/identityCard/:identityCard'
         get('/domainUser/:domainUser'
-    
+
       /sf
        get('/'
        get('/personalNumber/:personalNumber'
-       get('/identityCard/:identityCard' 
-       
-  ### SPLITTER
-  
+       get('/identityCard/:identityCard'
+
+### SPLITTER
+
       port: 9001
 
       /api
@@ -106,9 +108,9 @@
                   "identityCard": "5465468",   - optional
                   "domainUser": "domainUser",  - optional
                 }
-        
-  ### MERGES API
-  
+
+### MERGES API
+
       port: 6060
 
       /recovery

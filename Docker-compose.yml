@@ -42,15 +42,15 @@ services:
     volumes:
       - redis_data:/bitnami/redis/data
 
-  # basicmatch:
-  #   image: systemgenesis0/basic_match
-  #   env_file: basic_match.env
-  #   volumes:
-  #     - ./volumes/fieldNames.js:/usr/src/app/dist/config/fieldNames.js
-  #     - ./volumes/basicMatch.enums.js:/usr/src/app/dist/config/enums.js
-  #   depends_on:
-  #     - splitter
-  #     - rabbit
+  basicmatch:
+    image: systemgenesis0/basic_match
+    env_file: basic_match.env
+    volumes:
+      - ./volumes/fieldNames.js:/usr/src/app/dist/config/fieldNames.js
+      - ./volumes/basicMatch.enums.js:/usr/src/app/dist/config/enums.js
+    depends_on:
+      - splitter
+      - rabbit
 
   buildentity:
     image: systemgenesis0/build_entity
@@ -69,15 +69,15 @@ services:
     depends_on:
       - rabbit
 
-  creatergbe:
-    image: systemgenesis0/create_rgbe
-    restart: unless-stopped
-    env_file: creatergbe.env
-    volumes:
-      - ./key.pem:/dist/key.pem
-      - ./key.pem:/dist/key/key.pem
-    depends_on:
-      - rabbit
+  # creatergbe:
+  #   image: systemgenesis0/create_rgbe
+  #   restart: unless-stopped
+  #   env_file: creatergbe.env
+  #   volumes:
+  #     - ./key.pem:/dist/key.pem
+  #     - ./key.pem:/dist/key/key.pem
+  #   depends_on:
+  #     - rabbit
 
   selector:
     image: systemgenesis0/selector
@@ -99,24 +99,24 @@ services:
       - redis
       - rabbit
 
-  mergesapi:
-    image: systemgenesis0/merges_api
-    restart: unless-stopped
-    env_file: mergesAPI.env
-    volumes:
-      - ./volumes/mergesAPI.sources.js:/usr/src/app/dist/config/sources.js
-    ports:
-      - 6060:6060
-    depends_on:
-      - rabbit
-      - mongo
+  # mergesapi:
+  #   image: systemgenesis0/merges_api
+  #   restart: unless-stopped
+  #   env_file: mergesAPI.env
+  #   volumes:
+  #     - ./volumes/mergesAPI.sources.js:/usr/src/app/dist/config/sources.js
+  #   ports:
+  #     - 6060:6060
+  #   depends_on:
+  #     - rabbit
+  #     - mongo
 
-  mongo:
-    image: bitnami/mongodb:latest
-    ports:
-      - 27017:27017
-    volumes:
-      - './data/db:/data/db'
+  # mongo:
+  #   image: bitnami/mongodb:latest
+  #   ports:
+  #     - 27017:27017
+  #   volumes:
+  #     - './data/db:/data/db'
 
   merger:
     image: systemgenesis0/merger
@@ -124,7 +124,7 @@ services:
     env_file: merger.env
     depends_on:
       - rabbit
-      - mongo
+      # - mongo
 
 volumes:
   redis_data:
