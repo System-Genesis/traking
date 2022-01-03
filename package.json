@@ -1,0 +1,23 @@
+{
+  "name": "traking",
+  "version": "1.0.0",
+  "description": "### Queues Names - splitter    --> basic_match:  **BASIC_MATCH_QUEUE** - basic_match --> merger:       **MERGER_QUEUE** - merger      --> selector:     **SELECTOR_QUEUE** - recovery    --> selector:     **RECOVERY_QUEUE** - selector    --> buildEntity:  **BUILD_ENTITY_QUEUE** - selector    --> buildROGD:    **BUILD_ROGD_QUEUE** - buildEntity --> createRGBE:   **CREATE_RGBE_ENTITY_QUEUE** - buildROGD   --> createRGBE:   **CREATE_RGBE_ROGD_QUEUE** - All         --> logger:       **LOG_QUEUE** - createRGBE  --> createRGBE:   **CREATE_RGBE_CONNECT_DI_ENTITY_QUEUE**",
+  "main": "dataSources.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/System-Genesis/traking.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/System-Genesis/traking/issues"
+  },
+  "homepage": "https://github.com/System-Genesis/traking#readme",
+  "dependencies": {
+    "axios": "^0.24.0"
+  }
+}

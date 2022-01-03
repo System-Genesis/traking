@@ -1,5 +1,9 @@
+package-lock.json
 data/
 
 dataSources.ts/
 
 *.tar
+
+node_modules/
+*.txt
