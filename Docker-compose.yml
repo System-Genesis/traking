@@ -99,24 +99,23 @@ services:
       - redis
       - rabbit
 
-  # mergesapi:
-  #   image: systemgenesis0/merges_api
-  #   restart: unless-stopped
-  #   env_file: mergesAPI.env
-  #   volumes:
-  #     - ./volumes/mergesAPI.sources.js:/usr/src/app/dist/config/sources.js
-  #   ports:
-  #     - 6060:6060
-  #   depends_on:
-  #     - rabbit
-  #     - mongo
+  mergesapi:
+    image: systemgenesis0/merges_api
+    restart: unless-stopped
+    env_file: mergesAPI.env
+    volumes:
+      - ./volumes/mergesAPI.sources.js:/usr/src/app/dist/config/sources.js
+    ports:
+      - 6060:6060
+    depends_on:
+      - rabbit
 
-  # mongo:
-  #   image: bitnami/mongodb:latest
-  #   ports:
-  #     - 27017:27017
-  #   volumes:
-  #     - './data/db:/data/db'
+  mongo:
+    image: bitnami/mongodb:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - './data/db:/data/db'
 
   merger:
     image: systemgenesis0/merger
@@ -125,6 +124,13 @@ services:
     depends_on:
       - rabbit
       # - mongo
+
+  mirror:
+    image: systemgenesis0/mirror
+    restart: unless-stopped
+    env_file: mirror.env
+    depends_on:
+      - mongo
 
 volumes:
   redis_data:
