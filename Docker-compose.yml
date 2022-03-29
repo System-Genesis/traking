@@ -132,6 +132,14 @@ services:
     depends_on:
       - mongo
 
+  black_list:
+    image: systemgenesis0/black_list
+    restart: unless-stopped
+    env_file: black_list.env
+    depends_on:
+      - rabbit
+      - mongo
+
 volumes:
   redis_data:
     driver: local
