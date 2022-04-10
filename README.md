@@ -6,6 +6,8 @@
 - basic_match --> merger: **MERGER_QUEUE**
 - merger --> selector: **SELECTOR_QUEUE**
 - recovery --> selector: **RECOVERY_QUEUE**
+- delete --> selector: **DELETE_SELECTOR_QUEUE**
+- delete --> create: **DELETE_CREATE_QUEUE**
 - selector --> buildEntity: **BUILD_ENTITY_QUEUE**
 - selector --> buildROGD(normal flow): **BUILD_ROGD_QUEUE**
 - selector --> buildROGD(Mir flow): **BUILD_ROGD_MIR_QUEUE**
@@ -45,7 +47,7 @@
         get('/byDate/:dateMs'
 
       daily/
-        post('/hour/:hour/minute/:minute'
+        post('' { hour : int or int[], minute : int or int[] }
 
 ### MOCK KART
 
