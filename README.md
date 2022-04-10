@@ -47,7 +47,7 @@
         get('/byDate/:dateMs'
 
       daily/
-        post('' { hour : int or int[], minute : int or int[] }
+        post('' , body: { hour : int or int[], minute : int or int[] }
 
 ### MOCK KART
 
